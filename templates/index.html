@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coin Flip Game</title>
+    {% include "bootstrap.html" %}
+</head>
+<body class="d-flex flex-column vh-100 bg-dark-subtle">
+<header class="container-flex mt-3 ms-3">
+    <h1>Coin Flip Game</h1>
+</header>
+{% include "nav.html" %}
+<main class="flex-grow-1 mb-5">
+    <div class="container mt-5">
+        <div class="row">
+                <p>Welcome to the Coin Flip Game! A coin will be flipped, and it is up to you
+                to guess which side the coin landed on.</p>
+        </div>
+        <div class="row">
+            <a href="{{ url_for("generate_form") }}"><input type="button" value="Play Game"></a>
+        </div>
+    </div>
+</main>
+{% include "footer.html" %}
+</body>
+</html>

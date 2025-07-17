@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flip History</title>
+    {% include "bootstrap.html" %}
+</head>
+<body class="d-flex flex-column vh-100 bg-dark-subtle">
+<header class="container-flex mt-3 ms-3">
+    <h1>Coin Flip Game</h1>
+</header>
+{% include "nav.html" %}
+<main class="flex-grow-1 mb-5">
+    <div class="container mt-5">
+        <p>Total games played: {{ total_games }}</p>
+        <table class="table" id="playerGameHistory">
+            <thead class="table-success">
+            <tr><th>Game Number</th><th>Your Guess</th><th>Actual Side</th><th>Outcome</th></tr></thead>
+            <tbody>
+                {% for record in game_data %}
+                <tr>
+                    <td>{{ record[0] }}</td>
+                    <td>{{ record[1] }}</td>
+                    <td>{{ record[2] }}</td>
+                    <td>{{ record[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form action="{{ url_for("clear_games") }}" method="post">
+            <!-- Button to clear all player game data -->
+            <input type="submit" value="Clear History">
+        </form>
+    </div>
+</main>
+{% include "footer.html" %}
+</body>
+</html>

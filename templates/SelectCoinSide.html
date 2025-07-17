@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Select Coin Side</title>
+    {% include "bootstrap.html" %}
+</head>
+<body class="d-flex flex-column vh-100 bg-dark-subtle">
+<header class="container-flex mt-3 ms-3">
+    <h1>Coin Flip Game</h1>
+</header>
+{% include "nav.html" %}
+<main class="flex-grow-1 mb-5">
+    <div class="container mt-5">
+            <div class="row">
+                <p>A coin has been flipped.</p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <form action="{{ url_for("flip") }}" method="post">
+                        <label for="user_selection">Choose Heads or Tails:
+                            <select class="form-select" id="user_selection" name="user_selection">
+                                <option value="Heads">Heads</option>
+                                <option value="Tails">Tails</option>
+                            </select>
+                        </label>
+                        <input class="mt-4" type="submit" value="Submit Guess">
+                    </form>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+    </div>
+</main>
+{% include "footer.html" %}
+</body>
+</html>
