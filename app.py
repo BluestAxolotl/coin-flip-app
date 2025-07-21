@@ -15,7 +15,7 @@ def flip_coin():
 
 # Function that returns game outcome using coin side parameters
 def get_game_outcome(user_selection, coin_side_result):
-    return "Won" if user_selection == coin_side_result else "Lost"
+    return "<strong class='text-success'>Won</strong>" if user_selection == coin_side_result else "<strong class='text-danger'>Lost</strong>"
 
 
 def get_sql_command(command_name):

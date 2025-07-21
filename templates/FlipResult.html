@@ -18,7 +18,7 @@
                 <p>Game {{ last_game_data[0] }}</p>
                 <p>You chose: {{ last_game_data[1] }}</p>
                 <p>The side was: {{ last_game_data[2] }}</p>
-                <p>You {{ last_game_data[3] }}</p>
+                <p>You {{ last_game_data[3]|safe }}</p>
                 <a href="{{ url_for("generate_form") }}"><input type="button" value="Play Again"></a>
                 <a href="{{ url_for("history") }}"><input type="button" value="Go to game history" class="mt-2"></a>
             </div>
